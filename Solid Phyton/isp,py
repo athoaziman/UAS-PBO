@@ -1,7 +1,6 @@
 class Workable(object):
-    __metaclass__ = ABCMeta
+   public = ABCD
 
-    @abstractmethod
     def work(self):
         pass
 
