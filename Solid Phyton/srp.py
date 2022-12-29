@@ -1,39 +1,38 @@
-class Lingkaran:
+class Animal:
+    def __init__(self, name: str):
+        self.name = name
+    
+    def get_name(self) -> str:
+        pass
 
-    def __init__(self, radius):
-        self.radius = radius
-       
-class Persegi:
+    def save(self, animal: Animal):
+        pass
 
-    def __init__(self, panjang):
-        self.panjang = panjang
+class Animal:
+    def __init__(self, name: str):
+        self.name = name
+    
+    def get_name(self) -> str:
+        pass
 
-class Kalkulasi:
 
-    def __init__(self, *args):
-        self.bangunDatar = args
+class AnimalDB:
+    def get_animal(self, id) -> Animal:
+        pass
 
-    def calculate(self):
-        listLuas = []
-        for objek in self.bangunDatar:
-            luas = 0
-            if type(objek).__name__ == 'Persegi':
-                luas = math.pow(objek.panjang, 2)
-            elif type(objek).__name__ == 'Lingkaran':
-                luas = math.pi * math.pow(objek.radius, 2)
-            listLuas.append(luas)
+    def save(self, animal: Animal):
+        pass
+  
+class Animal:
+    def __init__(self, name: str):
+        self.name = name
+        self.db = AnimalDB()
 
-        return sum(listLuas)
+    def get_name(self) -> str:
+        return self.name
 
-    def output(self):
-        return self.calculate()
-      
-if __name__ == "__main__":
-
-    result = Kalkulasi(
-        Lingkaran(2),
-        Persegi(5),
-        Persegi(6)
-    )
-
-    print("luas dari bangunan adalah: ", result.output())
+    def get(self, id):
+        return self.db.get_animal(id)
+    
+    def save(self):
+        self.db.save(animal=self)
